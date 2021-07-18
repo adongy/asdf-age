@@ -23,12 +23,12 @@ download_release "$ASDF_INSTALL_VERSION" "$release_file"
 
 # Extract contents of archive file into the download directory
 case $platform in
-  windows)
-    unzip "$release_file" -d "$ASDF_DOWNLOAD_PATH" || fail "Could not uncompress"
-    ;;
-  *)
-    tar zxvf "$release_file" -C "$ASDF_DOWNLOAD_PATH" || fail "Could not uncompress"
-    ;;
+windows)
+  unzip "$release_file" -d "$ASDF_DOWNLOAD_PATH" || fail "Could not uncompress"
+  ;;
+*)
+  tar zxvf "$release_file" -C "$ASDF_DOWNLOAD_PATH" || fail "Could not uncompress"
+  ;;
 esac
 
 # Remove the archive file since we don't need to keep it
